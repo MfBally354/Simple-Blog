@@ -1,2 +1,56 @@
 /* File: assets/css/admin.css */
 
+/* ── Layout ───────────────────────────────────────────────── */
+body.admin-body { background-color: #f0f2f5; }
+
+#wrapper { min-height: 100vh; }
+
+#sidebar-wrapper {
+    width: 260px;
+    min-height: 100vh;
+    min-width: 260px;
+    transition: width 0.25s ease;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+#sidebar-wrapper.collapsed { width: 0; min-width: 0; overflow: hidden; }
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.sidebar-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.list-group-item-action { border: none; border-radius: 0; font-size: 0.9rem; }
+.list-group-item-action.active { background-color: #e8f0fe !important; color: #1a56db !important; border-left: 3px solid #1a56db; font-weight: 600; }
+.list-group-item-action:hover:not(.active) { background-color: #f8f9fa; }
+.sidebar-section-title { font-size: 0.7rem; letter-spacing: 0.5px; }
+
+/* ── Cards ────────────────────────────────────────────────── */
+.stat-card { border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; }
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important; }
+
+/* ── Tables ───────────────────────────────────────────────── */
+.table > :not(caption) > * > * { padding: 0.85rem 1rem; vertical-align: middle; }
+.table-hover tbody tr:hover { background-color: #f8fbff; }
+
+/* ── Navbar ───────────────────────────────────────────────── */
+nav.navbar { min-height: 60px; }
+
+/* ── Forms ────────────────────────────────────────────────── */
+.form-control:focus, .form-select:focus { border-color: #667eea; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
+
+/* ── Cards ────────────────────────────────────────────────── */
+.card-header { font-size: 0.95rem; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    #sidebar-wrapper { position: fixed; z-index: 999; }
+}
