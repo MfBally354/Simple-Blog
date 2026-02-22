@@ -1,3 +1,3 @@
 <?php
-// File: index.php
+// File: index.php Hehe
 ?>
