@@ -15,7 +15,7 @@ define('SITE_DESCRIPTION', 'Blog sederhana dengan PHP Native dan MySQL');
 // Upload Configuration
 define('UPLOAD_DIR', __DIR__ . '/../assets/images/articles/');
 define('UPLOAD_URL', SITE_URL . '/assets/images/articles/');
-define('MAX_FILE_SIZE', 2 * 1024 * 1024); // 2MB File size
+define('MAX_FILE_SIZE', 2 * 1024 * 1024); // 2MB File size max
 define('ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
 
 // Pagination
