@@ -1,5 +1,5 @@
 -- File: sql/database.sql
--- Blog Sederhana Database Schema d
+-- Blog Sederhana Database Schema
 
 CREATE DATABASE IF NOT EXISTS blog_sederhana CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE blog_sederhana;
