@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS comments (
     FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE
 );
 
--- Insert default admin user (password: admin123)
+-- Insert default admin user (passwordnya: admin123)
 INSERT INTO users (username, password, email, full_name) VALUES
 ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin@blog.com', 'Administrator');
 
