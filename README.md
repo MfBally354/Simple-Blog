@@ -7,7 +7,7 @@ Proyek blog sederhana dengan PHP Native dan MySQL.
 - Manajemen kategori
 - Sistem komentar
 - Admin panel
-- WYSIWYG editor 
+- WYSIWYG editor
 
 ## 🛠️ Requirements
 - PHP 7.4 atau lebih tinggi
