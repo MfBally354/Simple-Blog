@@ -12,7 +12,7 @@ Proyek blog sederhana dengan PHP Native dan MySQL.
 ## 🛠️ Requirements
 - PHP 7.4 atau lebih tinggi
 - MySQL 5.7 atau lebih tinggi
-- Web server (Apache/Nginx)
+- Web server (Apache2/Nginx)
 
 ## 🚀 Cara Install
 1. Clone repositori ini
