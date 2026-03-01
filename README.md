@@ -18,6 +18,6 @@ Proyek blog sederhana dengan PHP Native dan MySQL.
 1. Clone repositori ini `git clone https://github.com/MfBally354/Simple-Blog.git`
 2. Import file `sql/database.sql` ke phpMyAdmin
 3. Konfigurasi database di `includes/config.php`
-4. Jalankan di browser a
+4. Jalankan di browser an
 
 ## 📁 Struktur Folder
