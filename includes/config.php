@@ -9,13 +9,26 @@ define('DB_NAME', 'blog_sederhana');
 
 // Site Configuration
 define('SITE_NAME', 'Blog Sederhana');
-define('SITE_URL', 'http://localhost/Simple-Blog');
 define('SITE_DESCRIPTION', 'Blog sederhana dengan PHP Native dan MySQL');
+
+// Auto-detect SITE_URL — tidak perlu diubah manual
+(function() {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host     = $_SERVER['HTTP_HOST'] ?? 'localhost'; // Otomatis: 192.168.1.16:8080, localhost, dll.
+
+    // Deteksi subfolder: ambil path dari root sampai folder project ini
+    // __DIR__ = .../Simple-Blog/includes  →  kita ambil parent-nya
+    $docRoot    = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '/');
+    $scriptDir  = rtrim(str_replace('\\', '/', dirname(__DIR__)), '/');
+    $subPath    = str_replace($docRoot, '', $scriptDir); // Hasil: /Simple-Blog
+
+    define('SITE_URL', $protocol . '://' . $host . $subPath);
+})();
 
 // Upload Configuration
 define('UPLOAD_DIR', __DIR__ . '/../assets/images/articles/');
 define('UPLOAD_URL', SITE_URL . '/assets/images/articles/');
-define('MAX_FILE_SIZE', 2 * 1024 * 1024); // 2MB File size max
+define('MAX_FILE_SIZE', 2 * 1024 * 1024); // 2MB
 define('ALLOWED_TYPES', ['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
 
 // Pagination
