@@ -21,3 +21,52 @@ Proyek blog sederhana dengan PHP Native dan MySQL.
 4. Jalankan di browser anda
 
 ## 📁 Struktur Folder
+├── about.php
+├── admin
+│   ├── articles
+│   │   ├── create.php
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   └── index.php
+│   ├── categories
+│   │   ├── create.php
+│   │   ├── delete.php
+│   │   ├── edit.php
+│   │   └── index.php
+│   ├── comments
+│   │   ├── approve.php
+│   │   ├── delete.php
+│   │   └── index.php
+│   ├── includes
+│   │   ├── admin_footer.php
+│   │   ├── admin_header.php
+│   │   └── admin_sidebar.php
+│   ├── index.php
+│   ├── login.php
+│   └── logout.php
+├── article.php
+├── assets
+│   ├── css
+│   │   ├── admin.css
+│   │   ├── bootstrap.min.css
+│   │   └── style.css
+│   └── js
+│       ├── admin.js
+│       ├── bootstrap.min.js
+│       └── script.js
+├── category.php
+├── contact.php
+├── git.py
+├── includes
+│   ├── config.php
+│   ├── footer.php
+│   ├── functions.php
+│   ├── header.php
+│   ├── session.php
+│   └── sidebar.php
+├── index.php
+├── README.md
+├── search.php
+├── setup.sh
+└── sql
+    └── database.sql
