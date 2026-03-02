@@ -21,6 +21,7 @@ Proyek blog sederhana dengan PHP Native dan MySQL.
 4. Jalankan di browser anda
 
 ## 📁 Struktur Folder
+Simple-Blog
 ├── about.php
 ├── admin
 │   ├── articles
