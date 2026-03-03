@@ -9,7 +9,7 @@ define('DB_NAME', 'blog_sederhana');
 
 // Site Configuration
 define('SITE_NAME', 'Blog Sederhana');
-define('SITE_URL', 'http://localhost/Simple-');
+define('SITE_URL', 'http://localhost/Simple-Blog');
 define('SITE_DESCRIPTION', 'Blog sederhana dengan PHP Native dan MySQL');
 
 // Auto-detect SITE_URL — tidak perlu diubah manual
