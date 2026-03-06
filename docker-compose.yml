@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # ─── Web Server (PHP + Apache) ────────────────────────────
+  app:
+    build: .
+    container_name: blog_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - uploads_data:/var/www/html/assets/images/articles
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - blog_network
+
+  # ─── Database (MySQL) ─────────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: blog_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: blog_sederhana
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: blog_user
+      MYSQL_PASSWORD: blog_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - blog_network
+
+  # ─── phpMyAdmin (opsional, untuk manajemen DB via browser) ──
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: blog_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    depends_on:
+      - db
+    networks:
+      - blog_network
+
+# ─── Volumes ──────────────────────────────────────────────
+volumes:
+  db_data:
+  uploads_data:
+
+# ─── Networks ─────────────────────────────────────────────
+networks:
+  blog_network:
+    driver: bridge
