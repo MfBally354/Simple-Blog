@@ -1,0 +1,22 @@
+# Git
+.git
+.gitignore
+
+# Docker files sendiri
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# File tidak perlu di-copy ke container
+*.md
+*.py
+*.sh
+setup.sh
+git.py
+
+# Folder upload (dikelola via volume)
+assets/images/articles/*
+
+# OS files
+.DS_Store
+Thumbs.db
