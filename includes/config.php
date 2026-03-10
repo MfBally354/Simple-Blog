@@ -1,7 +1,7 @@
 <?php
 // File: includes/config.php
 
-// Database Configuration 
+// Database Configuration  
 
 define('DB_HOST', 'db');
 define('DB_USER', 'iqbal');
