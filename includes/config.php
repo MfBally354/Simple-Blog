@@ -22,7 +22,7 @@ define('SITE_DESCRIPTION', 'Blog sederhana dengan PHP Native dan MySQL');
     // __DIR__ = .../Simple-Blog/includes  →  kita ambil parent-nya
     $docRoot    = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '/');
     $scriptDir  = rtrim(str_replace('\\', '/', dirname(__DIR__)), '/');
-    $subPath    = str_replace($docRoot, '', $scriptDir); // Hasil: /Simple-Bl
+    $subPath    = str_replace($docRoot, '', $scriptDir); // Hasil: /Simple-Blo
 
     define('SITE_URL', $protocol . '://' . $host . $subPath);
 })();
