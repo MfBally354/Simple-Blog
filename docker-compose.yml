@@ -42,22 +42,6 @@ services:
     networks:
       - blog_network
 
-  # ─── phpMyAdmin (opsional, untuk manajemen DB via browser) ──
-  phpmyadmin:
-    image: phpmyadmin:latest
-    container_name: blog_phpmyadmin
-    restart: unless-stopped
-    ports:
-      - "8081:80"
-    environment:
-      PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: rootpassword
-    depends_on:
-      - db
-    networks:
-      - blog_network
-
 # ─── Volumes ──────────────────────────────────────────────
 volumes:
   db_data:
