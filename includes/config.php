@@ -4,8 +4,8 @@
 // Database Configuration
 
 define('DB_HOST', 'db');
-define('DB_USER', 'iqbal');
-define('DB_PASS', 'password');
+define('DB_USER', 'root');
+define('DB_PASS', '#iqbaldebian#');
 define('DB_NAME', 'blog_sederhana');
 
 // Site Configuration

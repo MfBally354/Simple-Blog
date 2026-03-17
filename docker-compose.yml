@@ -1,13 +1,11 @@
-version: '3.8'
-
 services:
   # ─── Web Server (PHP + Apache) ────────────────────────────
   app:
     build: .
-    container_name: blog_app
+    container_name: Simple-Blog
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "8090:80"
     volumes:
       - .:/var/www/html
       - uploads_data:/var/www/html/assets/images/articles
@@ -22,23 +20,24 @@ services:
   # ─── Database (MySQL) ─────────────────────────────────────
   db:
     image: mysql:8.0
-    container_name: blog_db
+    container_name: DATABASE-NIH-COYYY
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: blog_sederhana
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: "#iqbaldebian#"
       MYSQL_USER: blog_user
       MYSQL_PASSWORD: blog_password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p#iqbaldebian#"]
+      interval: 15s
+      timeout: 10s
+      retries: 15
+      start_period: 180s
     networks:
       - blog_network
 
