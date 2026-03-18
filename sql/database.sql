@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
     full_name VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
- 
+
 -- Tabel categories
 CREATE TABLE IF NOT EXISTS categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
